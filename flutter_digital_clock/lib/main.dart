@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_digital_clock/Routes/Routes.dart';
 import 'package:flutter_digital_clock/Routes/RoutesName.dart';
-import 'package:flutter_digital_clock/view_Model/Clock_Provider.dart';
+import 'package:flutter_digital_clock/view_Model/Analoge_Provider.dart';
+import 'package:flutter_digital_clock/view_Model/Digital_Provider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MultiProvider(
           providers: [
-            ChangeNotifierProvider(create: (_) => ClockProvider()),
+            ChangeNotifierProvider(create: (_) => DigitalProvider()),
+            ChangeNotifierProvider(create: (_)=> AnalogeProvider()),
           ],
 
           child: Builder(

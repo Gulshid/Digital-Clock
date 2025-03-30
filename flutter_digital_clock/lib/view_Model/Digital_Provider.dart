@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_digital_clock/Routes/RoutesName.dart';
 import 'package:hive/hive.dart';
 
-class ClockProvider with ChangeNotifier {
+class DigitalProvider with ChangeNotifier {
   //make provider for Splash Screen
   bool _loading = false;
 
