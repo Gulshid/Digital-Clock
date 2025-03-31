@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_digital_clock/Routes/RoutesName.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shimmer/shimmer.dart';
 
 class ShimmerView extends StatefulWidget {
   const ShimmerView({super.key});
@@ -9,7 +12,31 @@ class ShimmerView extends StatefulWidget {
 
 class _ShimmerViewState extends State<ShimmerView> {
   @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration(seconds: 3), () {
+      Navigator.pushReplacementNamed(context, Routesname.bottom_bar_view);
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Column(
+      children: List.generate(6, (index) {
+        return Shimmer.fromColors(
+          child: Container(
+            margin: EdgeInsets.symmetric(vertical: 8),
+            height: 88.h,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10.r),
+              color: Colors.white,
+            ),
+          ),
+          baseColor: Colors.grey[300]!,
+          highlightColor: Colors.grey[100]!,
+        );
+      }),
+    );
   }
 }

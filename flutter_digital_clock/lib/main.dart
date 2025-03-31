@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_digital_clock/Routes/Routes.dart';
 import 'package:flutter_digital_clock/Routes/RoutesName.dart';
+import 'package:flutter_digital_clock/model_/Clock_model.dart';
 import 'package:flutter_digital_clock/view_Model/Analoge_Provider.dart';
 import 'package:flutter_digital_clock/view_Model/Digital_Provider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         return MultiProvider(
           providers: [
             ChangeNotifierProvider(create: (_) => DigitalProvider()),
-            ChangeNotifierProvider(create: (_)=> AnalogeProvider()),
+            ChangeNotifierProvider(create: (_)=> AnalogeProvider(ClockModel())),
           ],
 
           child: Builder(
@@ -46,7 +47,7 @@ class MyApp extends StatelessWidget {
                     fontSizeFactor: 1.sp,
                   ),
                 ),
-                initialRoute: Routesname.clock_view,
+                initialRoute: Routesname.Analoge_clock,
                 onGenerateRoute: Routes.genrateRoute,
               );
             },

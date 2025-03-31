@@ -5,6 +5,7 @@ import 'package:flutter_digital_clock/view_/Clock_view1.dart';
 import 'package:flutter_digital_clock/view_/Clock_view2.dart';
 import 'package:flutter_digital_clock/view_/Shimmer_view.dart';
 import 'package:flutter_digital_clock/view_/Splash_view.dart';
+import 'package:flutter_digital_clock/view_/bottom_bar_view.dart';
 
 class Routes {
   static Route<dynamic> genrateRoute(RouteSettings hello) {
@@ -32,8 +33,13 @@ class Routes {
 
       case Routesname.Analoge_clock:
         {
+          return MaterialPageRoute(builder: (BuildContext context) => AnalogeClock());
+        }
+
+      case Routesname.bottom_bar_view:
+        {
           return MaterialPageRoute(
-            builder: (BuildContext context) => AnalogeView(),
+            builder: (BuildContext context) => BottomBarView(),
           );
         }
 
