@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_digital_clock/view_Model/Digital_Provider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class SplashView extends StatefulWidget {
@@ -22,14 +24,25 @@ class _SplashViewState extends State<SplashView> {
     return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
+
+
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10.r),
+            child: Image.asset('assets/table-clock_15447155.png', fit: BoxFit.fill, height: 50.h, width: 50.w,),
+          ),
+
           Center(
             child: Text(
-              'Hello',
-              style: TextStyle(color: Colors.black, fontSize: 40.sp),
+              'Clock App',
+              style: GoogleFonts.agbalumo(color: Colors.black, fontSize: 40.sp),
             ),
           ),
+
+          SpinKitPianoWave(color: Colors.deepPurple, size: 50.sp,)
+
+
         ],
       ),
     );

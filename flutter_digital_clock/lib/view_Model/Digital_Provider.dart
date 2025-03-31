@@ -38,7 +38,7 @@ class DigitalProvider with ChangeNotifier {
   String get current_time => _current_time;
 
   //function for load all the functions of clock view
-  void load_clock() {
+  DigitalProvider() {
     initialize();
   }
 
