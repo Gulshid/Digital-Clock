@@ -15,9 +15,15 @@ class AnalogeClock extends StatelessWidget {
         child: Consumer<AnalogeProvider>(
           builder: (context, clockViewModel, child) {
             final currentTime = clockViewModel.currentTime;
-            return CustomPaint(
-              size: const Size(300, 300),
-              painter: ClockPainter(currentTime),
+            return Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: AspectRatio(
+                aspectRatio: 1,
+                child: CustomPaint(
+                  size: const Size(300, 300),
+                  painter: ClockPainter(currentTime),
+                ),
+              ),
             );
           },
         ),

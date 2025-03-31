@@ -71,4 +71,15 @@ class DigitalProvider with ChangeNotifier {
     _timer.cancel();
     super.dispose();
   }
+
+  //current index
+  int _index=0;
+  int get index=>_index;
+
+
+  //set the current index
+  void set_currentIndex(int value){
+    _index=value;
+    notifyListeners();
+  }
 }

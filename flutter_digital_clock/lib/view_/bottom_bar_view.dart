@@ -1,6 +1,10 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_digital_clock/view_/Clock_view1.dart';
 import 'package:flutter_digital_clock/view_/Clock_view2.dart';
+import 'package:flutter_digital_clock/view_Model/Digital_Provider.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 class BottomBarView extends StatefulWidget {
   const BottomBarView({super.key});
@@ -12,12 +16,21 @@ class BottomBarView extends StatefulWidget {
 class _BottomBarViewState extends State<BottomBarView> {
   @override
   Widget build(BuildContext context) {
-    List Pages=[
-      DigitalClock(),
-      AnalogeClock(),
-    ]
+    final pro = Provider.of<DigitalProvider>(context);
+    List Pages = [DigitalClock(), AnalogeClock()];
     return Scaffold(
-      body: pages[]
+      body: Pages[pro.index],
+
+      bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: Colors.blueAccent,
+        onTap: (index) {
+          pro.set_currentIndex(index);
+        },
+        items: [
+          Icon(Icons.lock_clock, size: 30.sp),
+          Icon(Icons.punch_clock, size: 30.sp),
+        ],
+      ),
     );
   }
 }

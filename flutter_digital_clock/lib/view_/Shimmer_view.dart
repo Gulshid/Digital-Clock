@@ -21,22 +21,25 @@ class _ShimmerViewState extends State<ShimmerView> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: List.generate(6, (index) {
-        return Shimmer.fromColors(
-          child: Container(
-            margin: EdgeInsets.symmetric(vertical: 8),
-            height: 88.h,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10.r),
-              color: Colors.white,
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Column(
+        children: List.generate(10, (index) {
+          return Shimmer.fromColors(
+            child: Container(
+              margin: EdgeInsets.symmetric(vertical: 8),
+              height: 50.h,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10.r),
+                color: Colors.white,
+              ),
             ),
-          ),
-          baseColor: Colors.grey[300]!,
-          highlightColor: Colors.grey[100]!,
-        );
-      }),
+            baseColor: Colors.grey[300]!,
+            highlightColor: Colors.grey[100]!,
+          );
+        }),
+      ),
     );
   }
 }

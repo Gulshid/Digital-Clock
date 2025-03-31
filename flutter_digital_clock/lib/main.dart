@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
                     fontSizeFactor: 1.sp,
                   ),
                 ),
-                initialRoute: Routesname.Analoge_clock,
+                initialRoute: Routesname.splash_view,
                 onGenerateRoute: Routes.genrateRoute,
               );
             },

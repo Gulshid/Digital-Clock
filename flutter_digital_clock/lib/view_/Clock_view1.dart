@@ -13,18 +13,17 @@ class DigitalClock extends StatefulWidget {
 class _DigitalClockState extends State<DigitalClock> {
   @override
   Widget build(BuildContext context) {
-    final Pro_Digital = Provider.of<DigitalProvider>(context);
+    final ProDigital = Provider.of<DigitalProvider>(context);
 
     return Scaffold(
-      body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: Colors.green,
-          borderRadius: BorderRadius.circular(10.r),
-        ),
-
-        child: Center(child: Text(Pro_Digital.current_time, style: TextStyle(color: Colors.white, fontSize: 40.sp),)),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Center(child: Text('hello', style: TextStyle(color: Colors.black, fontSize: 30.sp),),),
+            Center(child: Text(ProDigital.current_time, style: TextStyle(color: Colors.black, fontSize: 40.sp),)),
+          
+        ],
       ),
     );
   }
