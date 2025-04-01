@@ -30,13 +30,13 @@ class _SplashViewState extends State<SplashView> {
 
           ClipRRect(
             borderRadius: BorderRadius.circular(10.r),
-            child: Image.asset('assets/table-clock_15447155.png', fit: BoxFit.fill, height: 50.h, width: 50.w,),
+            child: Image.asset('assets/table-clock_15447155.png', fit: BoxFit.fill, height: 100.h, width: 100.w,),
           ),
 
           Center(
             child: Text(
               'Clock App',
-              style: GoogleFonts.agbalumo(color: Colors.black, fontSize: 40.sp),
+              style: GoogleFonts.agbalumo(color: Colors.black, fontSize: 30.sp),
             ),
           ),
 

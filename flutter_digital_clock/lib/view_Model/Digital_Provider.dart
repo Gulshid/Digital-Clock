@@ -54,7 +54,7 @@ class DigitalProvider with ChangeNotifier {
   void Update_time() {
     final now = DateTime.now();
     _current_time =
-        '${now.hour.toString().padLeft(2, '0')} :  ${now.minute.toString().padLeft(2, '0')} :${now.second.toString().padLeft(2, '0')} ';
+        '${now.hour.toString().padLeft(2, '0')} : ${now.minute.toString().padLeft(2, '0')} : ${now.second.toString().padLeft(2, '0')} ';
     save_data(_current_time);
     notifyListeners();
   }
@@ -71,7 +71,7 @@ class DigitalProvider with ChangeNotifier {
     _timer.cancel();
     super.dispose();
   }
-
+//Bottom Bar Navigation from one screen to another
   //current index
   int _index=0;
   int get index=>_index;

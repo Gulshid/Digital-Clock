@@ -21,15 +21,23 @@ class _BottomBarViewState extends State<BottomBarView> {
     return Scaffold(
       body: Pages[pro.index],
 
-      bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: Colors.blueAccent,
-        onTap: (index) {
-          pro.set_currentIndex(index);
-        },
-        items: [
-          Icon(Icons.lock_clock, size: 30.sp),
-          Icon(Icons.punch_clock, size: 30.sp),
-        ],
+      bottomNavigationBar: ClipRRect(
+        borderRadius: BorderRadius.only(
+          topRight: Radius.circular(20.r),
+          topLeft: Radius.circular(20.r),
+        ),
+        child: CurvedNavigationBar(
+          height: 45.h,
+          color: Colors.deepPurple,
+          backgroundColor: Colors.blueAccent,
+          onTap: (index) {
+            pro.set_currentIndex(index);
+          },
+          items: [
+            Icon(Icons.lock_clock, size: 30.sp, color: Colors.white,),
+            Icon(Icons.punch_clock, size: 30.sp, color: Colors.white,),
+          ],
+        ),
       ),
     );
   }
