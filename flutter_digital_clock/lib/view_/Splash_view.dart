@@ -30,7 +30,7 @@ class _SplashViewState extends State<SplashView> {
 
           ClipRRect(
             borderRadius: BorderRadius.circular(10.r),
-            child: Image.asset('assets/table-clock_15447155.png', fit: BoxFit.fill, height: 100.h, width: 100.w,),
+            child: Image.asset('assets/table-clock_15447155.png', fit: BoxFit.fill, height: 150.h, width: 150.w,),
           ),
 
           Center(

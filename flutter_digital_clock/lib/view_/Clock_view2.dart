@@ -1,6 +1,9 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_digital_clock/view_Model/Analoge_Provider.dart';
+import 'package:flutter_digital_clock/view_Model/switch_provider.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class AnalogeClock extends StatelessWidget {
@@ -8,21 +11,28 @@ class AnalogeClock extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final provi = Provider.of<SwitchProvider>(context);
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor:provi.isDarkMode? Colors.black: Colors.teal,
       body: Center(
         child: Consumer<AnalogeProvider>(
           builder: (context, clockViewModel, child) {
             final currentTime = clockViewModel.currentTime;
-            return Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: AspectRatio(
-                aspectRatio: 1,
-                child: CustomPaint(
-                  size: const Size(300, 300),
-                  painter: ClockPainter(currentTime),
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Center(child: Text('Analoge Clock', style: GoogleFonts.agbalumo(color: provi.isDarkMode? Colors.white: Colors.black, fontSize: 25.sp),),),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: AspectRatio(
+                    aspectRatio: 1,
+                    child: CustomPaint(
+                      size: const Size(300, 300),
+                      painter: ClockPainter(currentTime),
+                    ),
+                  ),
                 ),
-              ),
+              ],
             );
           },
         ),

@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_digital_clock/Routes/RoutesName.dart';
 import 'package:hive/hive.dart';
@@ -82,4 +83,6 @@ class DigitalProvider with ChangeNotifier {
     _index=value;
     notifyListeners();
   }
+
+
 }
