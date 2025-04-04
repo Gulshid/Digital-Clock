@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
               final provi = Provider.of<SwitchProvider>(context);
               return MaterialApp(
                 debugShowCheckedModeBanner: false,
-                title: 'Digital Clock',
+                title: 'Clock App',
                 themeMode: provi.themeMode,
                 // theme: ThemeData(
                 //   applyElevationOverlayColor: true,
